@@ -1,60 +1,52 @@
 import{test,expect,request} from"@playwright/test"
 
+test.describe('API Test',()=>{
 
-const BASEURL="https://api.restful-api.dev/objects";
-let newId;
-const objId="";
-test.describe('API REST Testing',()=>{
+    const url="https://api.restful-api.dev/objects";
+    let Id;
 
-    test('POST function',async({request})=>{
-        const load={
-            name:"new test",
-            data:{
-                foo:"bar"
-            }
-        };
-        const res = await request.post(BASEURL,{
-            data:load,
-            headers:{'content-type':'application/json'},
-        });
-        expect(res.status()).toBe(200);
-        const body=await res.json();
-        expect(body.id).toBeTruthy();
-        newId=body.id;
-        console.log(newId);
-        expect(load.name).toBe(body.name);
-    });
-
-    //GET
-
-    test('GET',async({request})=>{
-        const res = await request.get(BASEURL);
-        expect(res.status()).toBe(200);
-        const list3 = await res.json();
-        console.log(list3);
-        expect(Array.isArray(list3)).toBe(true);
-
-    })
-    
-    //PUT
-
-    test('PUT',async({request})=>{
-        const res = await request.put(`${BASEURL}/${newId}`,{
+    test('POST Test',async({request})=>{{
+        const load =  {
+         name:"Samsung",
          data:{
-            name:"retest",
-            data:{updated:true}
+        capacity:"256 GB"
          }
+        };
+        const res = await request.post(url,{
+            data:load,
+            headers:{'content-type':'application/json'}
         });
-    expect(res.status()).toBe(200);
-    });
-
-    //DELETE
-
-    test('DELETE',async({request})=>{
-
-        const res = await request.delete(`${BASEURL}/${newId}`);
         expect(res.status()).toBe(200);
-        console.log('deleted id:',newId);
+        const body = await res.json();
+        Id = body.id;
+        expect(Id).toBeTruthy();
+        console.log(Id);
+    }});
+
+    test('GET test',async({request})=>{
+        const res = await request.get(url);
+        expect(res.status()).toBe(200);
+        const body = await res.json();
+        expect(Array.isArray(body)).toBe(true);
+        console.log(body);
     });
 
-});
+    test('PUT Test',async({request})=>{
+        const res = await request.put(`${url}/${Id}`,{
+            data:{
+                name:"samsung 23",
+                data:{
+                    updated:true
+                }
+            }
+        });
+        expect(res.status()).toBe(200);
+        const body1 = await res.json();
+        console.log(body1);
+    })
+
+    test('Delete test',async({request})=>{
+        const res = await request.delete(`${url}/${Id}`);
+        console.log("Deleted ID: ",Id);
+    })
+})
