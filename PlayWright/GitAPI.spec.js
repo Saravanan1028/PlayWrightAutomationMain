@@ -10,7 +10,7 @@ test.describe('GIT_Repo',()=>{
     const gitUpdatedName = "API_Test4"
     const userName="Saravanan1028"
     //Dummy to push
-    const token = process.env.GITHUB_TOKEN;
+    const toke = process.env.GITHUB_TOKEN;
     //Original token
     test('TC01_Create Repo by POST method',async({request})=>{
     const gitload = {
@@ -21,7 +21,7 @@ test.describe('GIT_Repo',()=>{
         const res = await request.post(`${BaseUrl}/user/repos`,{
             data:gitload,
             headers: {
-        'Authorization': `Bearer ${token}`,
+        'Authorization': `Bearer ${toke}`,
         'Accept': 'application/vnd.github+json'
       }
            // headers:{'content-type':'application/json'}
@@ -36,7 +36,7 @@ test.describe('GIT_Repo',()=>{
         //const res = await request.get(`${BaseUrl}/repos/Saravanan1028/${gitName}`);
         const res = await request.get(`${BaseUrl}/repos/${userName}/${gitName}`,{
             headers: {
-        'Authorization': `Bearer ${token}`,
+        'Authorization': `Bearer ${toke}`,
         'Accept': 'application/vnd.github+json'
       }
     });
@@ -53,7 +53,7 @@ test.describe('GIT_Repo',()=>{
             },
 
             headers:{
-                'Authorization': `Bearer ${token}`,
+                'Authorization': `Bearer ${toke}`,
                 'Accept': 'application/vnd.github+json'
             }
         });
@@ -70,7 +70,7 @@ test.describe('GIT_Repo',()=>{
       `${BaseUrl}/repos/${userName}/${gitUpdatedName}`,
       {
         headers: {
-          'Authorization': `Bearer ${token}`,
+          'Authorization': `Bearer ${toke}`,
           'Accept': 'application/vnd.github+json'
         }
       }
