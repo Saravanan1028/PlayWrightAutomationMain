@@ -1,0 +1,37 @@
+                                            CSS Selectors
+											
+	    Id(#)
+		1 #twotabsearchtextbox.nth(1)(Amazon Search bar)
+		2 #nav-search-submit-button(Amazon Search Icon)
+		3 #glow-ingress-line2(Amazon update Location)
+		4 #nav-logo-sprites(Amozon logo)
+		5 #nav-link-accountList-nav-line-1(Amazon Home Sigin)
+		6 #ap_email_login(Amazon enter email)
+		7 #ab-registration-ingress-link(Amazon create free business account)
+		8 #learn-more-url(Amazon business learnmore)
+		9 #helpsearch (Amazon find more solution search bar)
+		10
+		
+		Class(.)
+		1 .lNPl8b (Flipkart Home search)
+		2 .HmRjOS.U_HGJf (Flipkart Home Login Icon)
+		3 .c3Bd2c.yXUQVt(Flipkart Enter Email)
+		4 .dSM5Ub (Flipkart Request OTP)
+		5 .nYcTDx (Flipkart create an account)
+		6 .hm-icon(Amazon Home ALL icon)
+		7 .profile-gate-label (Netflix Who is watching)
+		8 .ON_SURFACE (Hotstar who is watching)
+		9 .icon-home-fill(Hotstar Home)
+		10 .icon-search-line(Hotstar serach)
+		
+		attributes(tagname[attributeName='value']
+		1 img[alt='Cart'] (Flipkart Home cart)
+		2 img[alt='Dropdown with more help links'] (Flipkart Home help link)
+		3 span[aria-label='India'](Amazon country label)
+		4 input[type='submit'](Amazon continue)
+		5 img[alt='Amazon Business'] (Amazon business icon)
+        6 input[name='businessEmail'](Amazon business email field)
+        7 button[role='button'] (Amazon business get started)
+        8 a[rel='noopener noreferrer'] (Amazon business learnmore)
+        9 a[aria-label='Manage Profiles'](Netflix Manage profile)
+        10 img[alt='Avatar'] (Hotstar Select Avatar)
