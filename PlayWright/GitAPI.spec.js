@@ -18,7 +18,7 @@ test.describe('GIT_Repo',()=>{
         description:"Repo Created by Playwright",
         private:false
         }
-        const res = await request.post(`${BaseUrl}/user/repos`,{
+          const res = await request.post(`${BaseUrl}/user/repos`,{
             data:gitload,
             headers: {
         'Authorization': `Bearer ${toke}`,

@@ -13,7 +13,7 @@ test('@TC01_Frames',async({page})=>{
 
 })
 
-test('@TC02_FileUplod',async({page})=>{
+test('@TC02_FileUpload',async({page})=>{
     const fileUrl="https://letcode.in/file";
     await page.goto(fileUrl);
     //await page.locator("[type='file']").click();
